@@ -9,15 +9,16 @@
           </v-btn>
         </div>
 
-        <v-list-item-group v-for="i in 6" :key="i">
-          <v-list-item>
+        <v-list-item-group>
+          <v-list-item v-for="i in no_taks" :key="i">
             <template>
               <v-list-item-action>
-                <v-checkbox :v-model="item.active" color="#2962FF"></v-checkbox>
+                <v-checkbox :v-model="task.active" color="#2962FF"></v-checkbox>
               </v-list-item-action>
               <v-list-item-content>
-                <v-list-item-title class="task-title">{{item.title}}</v-list-item-title>
-                <v-list-item-subtitle v-html="item.subtitle" class="task-subtitle"></v-list-item-subtitle>
+                <v-list-item-title class="task-title">{{task.title}}</v-list-item-title>
+                <v-list-item-subtitle v-html="task.subtitle" class="task-subtitle"></v-list-item-subtitle>
+                <v-divider class="eval-item-divider" v-show="i!=no_taks"></v-divider>
               </v-list-item-content>
               <v-list-item-avatar>
                 <v-avatar color="#2962FF" size="36">
@@ -26,7 +27,6 @@
               </v-list-item-avatar>
             </template>
           </v-list-item>
-          <v-divider class="eval-item-divider" v-show="i!=6"></v-divider>
         </v-list-item-group>
       </v-list>
     </v-card>
@@ -36,7 +36,8 @@
 <script>
 export default {
   data: () => ({
-    item: {
+    no_taks: 6,
+    task: {
       active: false,
       title: "Add Checkout Button",
       subtitle:
@@ -70,15 +71,13 @@ export default {
   float: right;
 }
 .eval-item-divider {
-  box-shadow: 0px 2px 4px 1px rgba(188, 188, 188, 0.2),
-    0px 4px 5px 0px rgba(188, 188, 188, 0.14),
-    0px 1px 10px 0px rgba(188, 188, 188, 0.12) !important;
   margin: auto;
-  width: 92%;
+  width: 100%;
 }
 .task-subtitle {
   color: #bcbcbc;
   font-size: 12px;
+  margin-bottom: 10px;
 }
 
 .avatar-headline{

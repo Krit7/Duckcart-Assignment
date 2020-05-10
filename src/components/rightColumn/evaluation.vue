@@ -3,33 +3,33 @@
     <v-card class="mx-auto eval-card" elevation="0">
       <v-list>
         <v-row no-gutters>
-          <v-col cols="3" sm>
+          <v-col md="3" xs="2">
             <v-subheader class="subheader">Evaluation</v-subheader>
           </v-col>
-          <v-col cols="3" sm>
+          <v-col md="3" xs="2">
             <v-btn class="eval-btn" outlined small color="#2962FF">
               <v-icon class="eval-icon">mdi-calendar-blank</v-icon>SCHEDULE
             </v-btn>
           </v-col>
-          <v-col cols="2" sm>
+          <v-col md="2" xs="2">
             <v-btn class="eval-btn" outlined small color="#404040">
               <v-icon class="eval-icon only-icon">mdi-share-variant</v-icon>
             </v-btn>
           </v-col>
-          <v-col cols="2" sm>
+          <v-col md="2" xs="2">
             <v-btn class="eval-btn" outlined small color="#404040">
               <v-icon class="eval-icon only-icon">mdi-telegram</v-icon>
             </v-btn>
           </v-col>
-          <v-col cols="2" sm>
+          <v-col md="2" xs="2">
             <v-btn class="eval-btn" outlined small color="#2962FF">More</v-btn>
           </v-col>
         </v-row>
 
-        <v-list-item-group v-for="(item,index) in evalItemNames" :key="index">
-          <v-divider class="eval-item-divider"></v-divider>
-          <v-list-item link>
+        <v-list-item-group>
+          <v-list-item v-for="(item,index) in evalItemNames" :key="index">
             <v-list-item-content style="padding: 5px 0 !important; ">
+              <v-divider class="eval-item-divider"></v-divider>
               <v-row no-gutters>
                 <v-col md="4" sm="6">
                   <v-list-item-title class="eval-list-item-title">{{item}}</v-list-item-title>
@@ -93,9 +93,6 @@ export default {
 }
 
 .eval-item-divider {
-  box-shadow: 0px 2px 4px 1px rgba(188, 188, 188, 0.2),
-    0px 4px 5px 0px rgba(188, 188, 188, 0.14),
-    0px 1px 10px 0px rgba(188, 188, 188, 0.12) !important;
 }
 .eval-list-item-title {
   margin: 12px 0;

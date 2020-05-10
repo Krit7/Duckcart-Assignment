@@ -9,13 +9,16 @@
           </v-btn>
         </div>
 
-        <v-list-item-group v-for="(item,index) in info" :key="index">
-          <v-list-item>
+        <v-list-item-group>
+          <v-list-item v-for="(item,index) in info" :key="index">
             <v-list-item-content>
-              <v-list-item-title class="notes-title">{{item.title}}<span class="notes-subtitle">{{item.subtitle}}</span></v-list-item-title>
+              <v-list-item-title class="notes-title">
+                {{item.title}}
+                <span class="notes-subtitle">{{item.subtitle}}</span>
+              </v-list-item-title>
+              <v-divider class="eval-item-divider" v-show="index!=no_info-1"></v-divider>
             </v-list-item-content>
           </v-list-item>
-          <v-divider class="eval-item-divider" v-show="index!=3"></v-divider>
         </v-list-item-group>
       </v-list>
     </v-card>
@@ -25,6 +28,7 @@
 <script>
 export default {
   data: () => ({
+    no_info: 4,
     info: [
       {
         title: "Email",
@@ -69,19 +73,18 @@ export default {
   float: right;
 }
 .eval-item-divider {
-  box-shadow: 0px 2px 4px 1px rgba(188, 188, 188, 0.2),
-    0px 4px 5px 0px rgba(188, 188, 188, 0.14),
-    0px 1px 10px 0px rgba(188, 188, 188, 0.12) !important;
-  margin-left: 20px;
 }
 .avatar-headline {
   font-size: 15px !important;
   text-align: center;
 }
-
+.notes-title{
+margin-bottom: 12px;
+}
 .notes-subtitle {
   color: #bcbcbc;
   font-size: 12px;
   margin-left: 50px;
+  
 }
 </style>

@@ -9,8 +9,8 @@
           </v-btn>
         </div>
 
-        <v-list-item-group v-for="(item,index) in experience" :key="index">
-          <v-list-item>
+        <v-list-item-group>
+          <v-list-item v-for="(item,index) in experience" :key="index">
             <v-list-item-content>
               <v-list-item-title class="notes-title">{{item.title}}</v-list-item-title>
               <v-list-item-subtitle class="notes-subtitle">{{item.post}}</v-list-item-subtitle>

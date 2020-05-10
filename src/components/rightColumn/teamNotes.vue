@@ -9,8 +9,8 @@
           </v-btn>
         </div>
 
-        <v-list-item-group v-for="i in 4" :key="i">
-          <v-list-item>
+        <v-list-item-group>
+          <v-list-item v-for="i in no_items" :key="i">
             <v-list-item-avatar>
               <v-avatar color="#2962FF" size="36">
                 <span class="white--text avatar-headline">KP</span>
@@ -19,9 +19,9 @@
             <v-list-item-content>
               <v-list-item-title class="notes-title">{{item.title}}</v-list-item-title>
               <v-list-item-subtitle class="notes-subtitle">{{item.subtitle}}</v-list-item-subtitle>
+              <v-divider class="eval-item-divider" v-show="i!=no_items"></v-divider>
             </v-list-item-content>
           </v-list-item>
-          <v-divider class="eval-item-divider" v-show="i!=4"></v-divider>
         </v-list-item-group>
       </v-list>
     </v-card>
@@ -31,6 +31,7 @@
 <script>
 export default {
   data: () => ({
+    no_items :4,
     item: {
       title: "Kamal Pratap",
       subtitle: "Hey guys, I have pushed my progress to the master branch"
@@ -44,6 +45,7 @@ export default {
   border-radius: 10px !important;
   border: 1px solid #e4e0e0;
   box-shadow: none;
+  margin: 25px 0;
 }
 .list-header-div {
   height: auto;
@@ -62,12 +64,8 @@ export default {
   float: right;
 }
 .eval-item-divider {
-  box-shadow: 0px 2px 4px 1px rgba(188, 188, 188, 0.2),
-    0px 4px 5px 0px rgba(188, 188, 188, 0.14),
-    0px 1px 10px 0px rgba(188, 188, 188, 0.12) !important;
-  margin-left: 70px;
 }
-.avatar-headline{
+.avatar-headline {
   font-size: 15px !important;
   text-align: center;
 }
@@ -75,5 +73,6 @@ export default {
 .notes-subtitle {
   color: #bcbcbc;
   font-size: 12px;
+  margin-bottom: 8px;
 }
 </style>

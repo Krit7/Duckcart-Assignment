@@ -9,7 +9,9 @@
           </v-btn>
         </div>
 
-        <v-chip class="chip" v-for="i in 15" :key="i">{{chips[i%3]}}</v-chip>
+        <v-chip-group column active-class="primary--text">
+          <v-chip class="chip" v-for="i in 15" :key="i">{{chips[i%3]}}</v-chip>
+        </v-chip-group>
       </v-list>
     </v-card>
   </div>
@@ -20,10 +22,10 @@ export default {
   data: () => ({
     chips: ["Web Development", "Python", "CSS"]
   }),
-  methods:{
-      randomChip(){
-          return Math.floor(Math.random() * 3);
-      }
+  methods: {
+    randomChip() {
+      return Math.floor(Math.random() * 3);
+    }
   }
 };
 </script>
@@ -49,22 +51,8 @@ export default {
   margin: -5px 1px !important;
   float: right;
 }
-.eval-item-divider {
-  box-shadow: 0px 2px 4px 1px rgba(188, 188, 188, 0.2),
-    0px 4px 5px 0px rgba(188, 188, 188, 0.14),
-    0px 1px 10px 0px rgba(188, 188, 188, 0.12) !important;
-  margin-left: 20px;
-}
-.avatar-headline {
-  font-size: 15px !important;
-  text-align: center;
-}
 
-.notes-subtitle {
-  color: #bcbcbc;
-  font-size: 14px;
-}
 .chip{
-    margin: 3px 5px;
+  margin-left: 2px;
 }
 </style>
